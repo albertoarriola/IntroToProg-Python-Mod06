@@ -6,6 +6,9 @@
 #   Alberto Arriola, 3/1/2025, Added comments
 # ------------------------------------------------------------------------------------------ #
 
+
+import json                                                 # import json module
+
 # Constants
 MENU: str = """---- Course Registration Program ----
   Select from the following menu:
@@ -21,7 +24,6 @@ file: object = None                                         # Object variable fo
 menu_choice: str = " "                                      # String variable containing the user's menu selection
 students: list = [dict [str, str, str]]                     # List variable for collecting all the entered student information
 
-import json                                                 # import json module
 
 # Define Classes
 
@@ -105,6 +107,17 @@ class IO:
         print()                                                                                 # Extra print() line for formatting
 
     @staticmethod
+    def output_menu(menu_display: str):
+        """
+        This function prints out the selection Menu.
+        ChangeLog: (Who, When, What)
+        Alberto Arriola, 2/28/2025, Created function
+        :parameters: menu_display: menu String displaying menu selections
+        :return: None
+        """
+        print(menu_display)                                                                     # value of menu_display String is displayed
+
+    @staticmethod
     def input_menu_choice(menu_display: str):
         """
         This function retrieves the user's menu selection.
@@ -126,17 +139,6 @@ class IO:
                 break                                                                           # break statement exits the while Loop
         print()                                                                                 # Extra print() line for formatting
         return user_selection                                                                   # value stored in user_selection is returned to the main program
-
-    @staticmethod
-    def output_menu(menu_display: str):
-        """
-        This function prints out the selection Menu.
-        ChangeLog: (Who, When, What)
-        Alberto Arriola, 2/28/2025, Created function
-        :parameters: menu_display: menu String displaying menu selections
-        :return: None
-        """
-        print(menu_display)                                                                     # value of menu_display String is displayed
 
     @staticmethod
     def input_student_data(student_list: list):
